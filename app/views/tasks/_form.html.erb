@@ -24,7 +24,7 @@
   <%# ¿Usamos select o usamos el calendario...? %>
   <div class="field">
     <%= form.label :due_date, 'Fecha' %>
-    <%= form.date_select :due_date, placeholder: 'Ingresa tu fecha de nacimiento', selected: Date.today, required: true  %>
+    <%= form.date_field :due_date, min: Date.today %>
   </div>
 
   <div class="field">

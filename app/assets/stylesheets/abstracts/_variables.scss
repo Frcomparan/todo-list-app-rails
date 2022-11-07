@@ -8,6 +8,10 @@ $grey: rgb(143, 143, 143);
 $grey-opacity: rgba(143, 143, 143, 0.308);
 $grey-opacity-2: rgba(114, 114, 114, 0.815);
 
+// Forms colors
+$primary-button: rgb(0, 100, 192);
+$primary-field: rgba(204, 229, 255, 0.699);
+
 
 //Shadows
 $low-shadow: 0 0 3px $black;
@@ -16,3 +20,8 @@ $large-shadow: 0 0 7px $black;
 
 //Fonts
 $font-family: 'Roboto', sans-serif;
+
+//Priority colors
+$low-priority: rgb(212, 237, 218);
+$medium-priority: rgb(255, 243, 205);
+$high-priority: rgb(248, 215, 218);
