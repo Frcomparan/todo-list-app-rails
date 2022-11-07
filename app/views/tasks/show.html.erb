@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="task-show">
+  <div>
+    <header>
+      <h2> <%= @task.title %> </h2>
+      <div class="task-due-date">
+        <i class="fa-solid fa-calendar-days"></i>
+        <%= @task.due_date.strftime('%d/%m') %>
+      </div>
+    </header>
+    <article>
+      <%= @task.description %>
+    </article>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+  <div class="task-show-options">
+    <%= link_to edit_task_path(@task) do %> 
+      <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
+    <%= link_to tasks_path do %>
+      <i class="fa-solid fa-rotate-left"></i>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @task.due_date %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @task.owner_id %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @task.priority %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
