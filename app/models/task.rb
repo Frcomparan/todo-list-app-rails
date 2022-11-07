@@ -7,10 +7,10 @@ class Task < ApplicationRecord
   validates :priority, presence: true, presence: { message: 'Debe asignar una prioridad a la tarea' }
 
   # Validar que los valores de prioridad solo puede estar entre 0 y 2
-  validates :priority, numericality: { in: 0..2, message: 'La prioridad esta fuera de rango' }
+  # validates :priority, numericality: { in: 0..2, message: 'La prioridad esta fuera de rango' }
 
   # Validación personalizada para la fecha de termino
-  validate :valid_due_date?
+  before_create :valid_due_date?
 
   # Haciendo más entendibles/intuitivos los niveles
   enum priority: { low: 0, medium: 1, high: 2 }

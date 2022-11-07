@@ -1,7 +1,7 @@
 <div class="users-options">
-  <% if !user_signed_in? %>
+  <% if user_signed_in? %>
     <%= link_to 'Actualizar datos', edit_user_registration_path %>
-    <%= link_to 'Cerrar sesión', destroy_user_session_path %>
+    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Iniciar sesión', new_user_session_path %>
     <%= link_to 'Crear cuenta', new_user_registration_path %>

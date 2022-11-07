@@ -104,9 +104,6 @@
       border-bottom: 1px solid $low-grey;
     }
   }
-
-
-
 }
 
 .task-show-options {
@@ -115,4 +112,62 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.form-container .task-form {
+  .field input, .field textarea {
+    border: none;
+  }
+
+  .field { margin: 0; }
+
+  header {
+    align-items: center;
+    border-bottom: 1px solid $low-grey;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    padding-bottom: 8px;
+
+    input[type="date"] { 
+      font-size: 1.4rem;
+      padding: 0;
+      width: 100%;
+    }
+
+    label { 
+      display: block;
+      font-size: 1rem;
+    }
+
+    div:first-child {
+      border-right: 1px solid $low-grey;
+    }
+
+    div { 
+      display: inline-block;
+    }  
+  }
+
+  .task-description { 
+    border-bottom: 1px solid $low-grey;
+    padding-top: 8px;
+
+    textarea { min-height: 200px; }
+  }
+
+  .task-priority {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    place-items: end;
+
+    label { font-size: 1rem; }
+
+    select {
+      background: none;
+      border-radius: 8px;
+      border: none;
+      padding: 4px;
+    }
+  }
 }
