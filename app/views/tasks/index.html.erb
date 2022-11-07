@@ -21,8 +21,11 @@
           <td><%= task.title %></td>
           <td><%= task.description %></td>
           <td><%= task.due_date %></td>
-          <td><%= task.owner_id %></td>
-          <td><%= task.priority %></td>
+          <td><%= task.owner.email %></td>
+          <%# Verificación para imprimir el nivel de prioridad con traducción %>
+          <% [["Baja", "low"], ["Media", "medium"], ["Alta", "high"]].each do |priority|%>
+            <td><%= priority[0] if priority[1] == task.priority %></td>
+          <% end %>
           <td><%= link_to 'Show', task %></td>
           <td><%= link_to 'Edit', edit_task_path(task) %></td>
           <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
