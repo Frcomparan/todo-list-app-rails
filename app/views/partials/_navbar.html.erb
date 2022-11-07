@@ -1,13 +1,19 @@
 <nav>
   <ul>
     <li class="nav-options">
-      <a href="/"> <i class="fa-solid fa-clipboard"></i> </a>
+      <%= link_to tasks_path do %>
+        <i class="fa-solid fa-clipboard"></i>
+      <% end %>
     </li>
     <li class="nav-options">
-      <a href="/"> <i class="fa-solid fa-house"></i> </a>
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-house"></i> 
+      <% end %>
     </li>
     <li class="nav-options">
-      <a href="/"> <i class="fa-solid fa-user"></i> </a>
+      <%= link_to users_options_path do %>
+        <i class="fa-solid fa-user"></i>
+      <% end %>
     </li>
   </ul>
 </nav>
