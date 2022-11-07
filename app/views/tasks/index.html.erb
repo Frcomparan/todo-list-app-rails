@@ -1,20 +1,22 @@
-<div class="task-container">
+<div class="task-index">
   <form action="" class="task-searcher">
     <input type="text" placeholder="Buscar tarea">
     <button type="submit">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </form>
-  <% @tasks.each do |task| %>
-    <div class="task task-<%= task.priority %>">
-      <div>
-        <div class="priority"></div>
-        <%= task.title %>
-      </div>
-      <div class="task-due-date">
-        <i class="fa-solid fa-calendar-days"></i>
-        <%= task.due_date.strftime('%d/%m') %>
-      </div>
-    </div>
-  <% end %>
+  <div class="tasks-container">
+    <% @tasks.each do |task| %>
+        <%= link_to task, class: "task task-#{ task.priority }" do %>
+          <div>
+            <div class="priority"></div>
+            <%= task.title %>
+          </div>
+          <div class="task-due-date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <%= task.due_date.strftime('%d/%m') %>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>
