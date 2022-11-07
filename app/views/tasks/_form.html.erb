@@ -13,17 +13,18 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, required: true  %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, required: true %>
   </div>
 
+  <%# ¿Usamos select o usamos el calendario...? %>
   <div class="field">
     <%= form.label :due_date, 'Fecha' %>
-    <%= form.date_select :due_date, placeholder: 'Ingresa tu fecha de nacimiento' %>
+    <%= form.date_select :due_date, placeholder: 'Ingresa tu fecha de nacimiento', selected: Date.today, required: true  %>
   </div>
 
   <div class="field">
