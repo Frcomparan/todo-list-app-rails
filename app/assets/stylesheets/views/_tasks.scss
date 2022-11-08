@@ -1,6 +1,7 @@
 .task-index {
   font-size: 1.4rem;
-  margin: 60px 0;
+  margin: 0;
+  position: sticky;
   width: 100%;
 
   a {
@@ -79,6 +80,31 @@
   .task-medium .priority { background-color: $medium-priority; }
   .task-high .priority { background-color: $high-priority; }
 }
+
+.link-container {
+  background: $primary-color;
+  border-radius: 50%;
+  bottom: 60px;
+  box-shadow: 0px 0px 10px 8px white;
+  cursor: pointer;
+  height: 40px;
+  margin-left: 85%;
+  position: sticky;
+  width: 40px;
+  overflow: hidden;
+  
+  .task-new-btn {
+    @include center-grid;
+    background: $primary-color;
+    color: $white;
+    font-size: 2rem;
+    font-weight: bolder;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.link-container:hover { transform: scale(1.1); }
 
 .profiler-results { display: none !important; }
 
@@ -169,6 +195,19 @@
       border-radius: 8px;
       border: none;
       padding: 4px;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .link-container {
+    bottom: 20px;
+    height: 55px;
+    width: 55px;
+
+    .task-new-btn {
+      font-weight: 400;
+      font-size: 3rem;
     }
   }
 }

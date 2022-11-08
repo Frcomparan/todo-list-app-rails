@@ -1,5 +1,5 @@
 nav {
-  background-color: $white;
+  background: $white;
   border-top: 1px solid $grey-opacity;
   bottom: 0;
   font-size: 2rem;
@@ -7,6 +7,7 @@ nav {
   left: 0;
   position: fixed;
   width: 100%;
+  z-index: 3;
   
   ul {
     display: grid;
@@ -36,12 +37,13 @@ nav {
 
 @media only screen and (min-width: 800px) {
   nav {
-    position: relative;
-    
+    border: none;
+    position: sticky;
+    top: 20px;
+
     ul {
       display: flex;
-      flex-direction: column;     
-      margin-top: 60px;
+      flex-direction: column;
     }
   }
 }

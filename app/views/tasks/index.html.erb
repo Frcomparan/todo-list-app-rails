@@ -20,4 +20,7 @@
     <% end %>
     <%= button_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
   </div>
+  <div class="link-container">
+    <%= link_to '+', new_task_path, class: 'task-new-btn' %>
+  </div>
 </div>

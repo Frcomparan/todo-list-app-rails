@@ -16,6 +16,7 @@ body {
 }
 
 .container {
+  margin-top: 20px;
   padding: 0 5% !important;
   width: 100%;
 }
@@ -35,10 +36,11 @@ button:hover {
   transform: scale(1.1);
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
   .container {
     display: grid;
     grid-template-columns: 1fr 600px 1fr;
+    margin-top: 45px;
     min-width: 100vw;
   }
 }
