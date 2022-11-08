@@ -1,4 +1,7 @@
 <div class="users-options">
+  <div class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </div>
   <% if user_signed_in? %>
     <%= link_to 'Actualizar datos', edit_user_registration_path %>
     <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
