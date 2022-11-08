@@ -1,1 +1,18 @@
-<h1>Este será un hermoso HOME</h1>
+<div class="home-container">
+  <header>
+    <h1>Bienvenido usuario</h1>
+  </header>
+  <section>
+    <%= link_to 'Crear nueva tarea', new_task_path %>
+    <a href="/" >Crear nueva tarea</a>
+  </section>
+  <section>
+    <%= link_to 'Tareas de hoy', tasks_path %>
+  </section>
+  <section>
+    <%= link_to 'Tareas importantes', tasks_path %>
+  </section>
+  <section>
+    <%= link_to 'Tareas atrasadas', tasks_path %>
+  </section>
+</div>
