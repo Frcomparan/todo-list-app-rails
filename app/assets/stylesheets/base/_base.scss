@@ -5,14 +5,16 @@
 }
 
 html {
+  background-color: $grey-opacity-2 ;
   font-size: 62.5%;
 }
 
 body {
+  background-color: $grey-opacity-2 !important;
   display: flex;
   flex-direction: column;
-  position: relative;
   font-family: $font-family; 
+  position: relative;
 }
 
 .container {
@@ -36,12 +38,12 @@ button:hover {
   transform: scale(1.1);
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   .container {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: 1fr 600px 1fr;
-    margin-top: 45px;
-    min-width: 100vw;
+    background-color: $grey-opacity-2;
+    margin-left: 0 auto;
+    max-width: 600px !important;
+    min-height: 400px;
+    padding: 0 !important;
   }
 }

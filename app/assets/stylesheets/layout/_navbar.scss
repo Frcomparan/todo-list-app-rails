@@ -22,30 +22,50 @@ nav {
     li { width: 70%; }
 
     a {
+      color: $grey;
       display: block;
+      display: grid;
+      padding: 4px;
       text-align: center;
+      text-decoration: none;
+
+      span { font-size: 1rem; }
     }
 
     // Futuro select/hover
-    a {
+    a:hover, .active a {
       background-color: $primary-field;
       border-radius: 10px;
+      color: $primary-color;
     }
   }
 }
 
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   nav {
     border: none;
+    max-width: 300px;
     min-height: 100vh;
-    position: sticky;
-    top: 20px;
-    border-right: 1px solid $low-grey;
+    min-width: 185px;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
 
     ul {
+      align-items: baseline;
       display: flex;
       flex-direction: column;
+
+      a {
+        align-items: center;
+        display: flex;
+        gap: 15px;
+
+        i { width: 30px; }
+        
+        span { font-size: 1.6rem; }
+      }
     }
   }
 }

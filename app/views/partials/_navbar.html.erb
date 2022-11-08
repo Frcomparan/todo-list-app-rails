@@ -1,18 +1,21 @@
 <nav>
   <ul>
-    <li class="nav-options">
+    <li class="nav-options <%='active' if @option == 'task' %>">
       <%= link_to tasks_path do %>
         <i class="fa-solid fa-clipboard"></i>
+        <span>Mis tareas</span>
       <% end %>
     </li>
-    <li class="nav-options">
+    <li class="nav-options <%= 'active' if @option == 'home' %>">
       <%= link_to root_path do %>
-        <i class="fa-solid fa-house"></i> 
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
       <% end %>
     </li>
-    <li class="nav-options">
+    <li class="nav-options <%= 'active' if @option == 'user' %>">
       <%= link_to users_options_path do %>
         <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
       <% end %>
     </li>
   </ul>
