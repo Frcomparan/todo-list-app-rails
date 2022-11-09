@@ -19,13 +19,16 @@
     width: 100%;
     
     input {
-      background-color: $primary-field-2;
+      background-color: $white;
       border-radius: 20px;
       border: 1px solid $grey-opacity;
       font-size: 1.6rem;
+      outline: 0;
       padding: 8px 14px;
       width: 100%;
     }
+
+    input:focus { border: 2px solid $primary-color }
     
     button {
       @include center-grid;
@@ -167,6 +170,7 @@
     width: 100%;
 
     input[type="date"] { 
+      background-color: $grey-opacity-2;
       font-size: 1.4rem;
       padding: 0;
       width: 100%;
@@ -184,6 +188,12 @@
     div { 
       display: inline-block;
     }  
+    
+  }
+  .actions input[type="submit"] {
+    background: $primary-button;
+    border-radius: 4px;
+    color: $white;
   }
 
   .task-description { 
