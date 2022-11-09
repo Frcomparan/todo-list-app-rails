@@ -45,14 +45,15 @@ nav {
 @media only screen and (min-width: 1000px) {
   nav {
     border: none;
-    max-width: 300px;
+    position: static;
     min-height: 100vh;
-    min-width: 185px;
-    padding-top: 20px;
-    position: fixed;
-    top: 0;
+    background: none;
 
     ul {
+      padding-top: 20px;
+      max-width: 250px;
+      position: fixed;
+      background: $white;
       align-items: baseline;
       display: flex;
       flex-direction: column;
