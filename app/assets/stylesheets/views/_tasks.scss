@@ -19,7 +19,7 @@
     width: 100%;
     
     input {
-      background-color: $primary-field;
+      background-color: $primary-field-2;
       border-radius: 20px;
       border: 1px solid $grey-opacity;
       font-size: 1.6rem;
@@ -69,7 +69,17 @@
         gap: 4px;
       }
     }
+
+    .overdue {
+      background: $low-grey;
+      text-decoration: line-through;
+  
+      .priority-low { background-color: $low-priority-strong; }
+      .priority-medium { background-color: $medium-priority-strong; }
+      .priority-high { background-color: $high-priority-strong; }
+    }
   }
+
 
   .priority {
     border-radius: 50%;
@@ -77,9 +87,9 @@
     width: 20px;
   }
 
-  .task-low .priority { background-color: $low-priority; }
-  .task-medium .priority { background-color: $medium-priority; }
-  .task-high .priority { background-color: $high-priority; }
+  .priority-low { background-color: $low-priority; }
+  .priority-medium { background-color: $medium-priority; }
+  .priority-high { background-color: $high-priority; }
 }
 
 .link-container {
@@ -90,9 +100,9 @@
   cursor: pointer;
   height: 40px;
   margin-left: 85%;
+  overflow: hidden;
   position: sticky;
   width: 40px;
-  overflow: hidden;
   
   .task-new-btn {
     @include center-grid;
@@ -201,6 +211,16 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .task-index {
+    padding-top: 20px;
+
+    .task-searcher {
+      margin-bottom: 10px;
+      position: sticky;
+      top: 0;
+    }
+  }
+
   .link-container {
     bottom: 20px;
     height: 55px;

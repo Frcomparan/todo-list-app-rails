@@ -7,12 +7,12 @@
     <a href="/" >Crear nueva tarea</a>
   </section>
   <section>
-    <%= link_to 'Tareas de hoy', tasks_path %>
+    <%= link_to 'Tareas de hoy', tasks_path(today: Date.today) %>
   </section>
   <section>
-    <%= link_to 'Tareas importantes', tasks_path %>
+    <%= link_to 'Tareas importantes', tasks_path(priority: 2) %>
   </section>
   <section>
-    <%= link_to 'Tareas atrasadas', tasks_path %>
+    <%= link_to 'Tareas atrasadas', tasks_path(overdue: Date.today) %>
   </section>
 </div>

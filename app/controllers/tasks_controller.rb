@@ -4,7 +4,10 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.order(:due_date)
+    @tasks = current_user.tasks.where('due_date = ?', params[:today]) if params[:today]
+    @tasks = current_user.tasks.where('due_date < ?', params[:overdue]) if params[:overdue]
+    @tasks = current_user.tasks.where('priority = ?', params[:priority]) if params[:priority]
     @option = 'task'
   end
 
