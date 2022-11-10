@@ -1,0 +1,27 @@
+.general-filter {
+  position: sticky;
+  top: 65px;
+
+  ul {
+    display: flex;
+    font-size: 1.7rem;
+    gap: 8px;
+    justify-content: end;
+
+    // Filtro de tiempo
+    li:first-child a { color: $secundary-color; }
+    li:first-child a:hover, .filt-selected:first-child a { color: $primary-color; }
+
+    // Filtro de prioridad baja
+    li:nth-child(2) a { color: $low-priority; }
+    li:nth-child(2) a:hover, .filt-selected:nth-child(2) a { color: $low-priority-strong; }
+
+    // Filtro de prioridad media
+    li:nth-child(3) a { color: $medium-priority; }
+    li:nth-child(3) a:hover, .filt-selected:nth-child(3) a { color: $medium-priority-strong; }
+
+    // Filtro de prioridad alta
+    li:nth-child(4) a { color: $high-priority; }
+    li:nth-child(4) a:hover, .filt-selected:nth-child(4) a { color: $high-priority-strong; }
+  }
+}
