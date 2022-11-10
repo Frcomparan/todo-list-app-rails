@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'users_options' => 'pages#users_options'
+  get 'searcher' => 'pages#searcher'
 end
