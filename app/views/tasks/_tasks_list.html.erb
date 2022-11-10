@@ -5,7 +5,6 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     <% end %>
   <% end %>
-  <%= render 'partials/filter_component', tasks: @tasks, filt_selected: @filt_selected %>
   <div class="tasks-container">
     <% @tasks.each do |task| %>
         <%= link_to task, class: "task #{'overdue' if task.due_date < Date.today }" do %>
@@ -23,4 +22,5 @@
   <div class="link-container">
     <%= link_to '+', new_task_path, class: 'task-new-btn' %>
   </div>
+  <%= render 'partials/filter_component', tasks: @tasks, filt_selected: @filt_selected %>
 </div>

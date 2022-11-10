@@ -1,3 +1,10 @@
+@-webkit-keyframes crece {
+  0%  { -webkit-transform:scale(1); }
+  10%  { -webkit-transform:scale(1.05); }
+  20%  { -webkit-transform:scale(1); }
+  100%  { -webkit-transform:scale(1); }
+}
+
 .task-index {
   font-size: 1.4rem;
   margin: 0 0 14px 0;
@@ -87,7 +94,6 @@
     }
   }
 
-
   .priority {
     border-radius: 50%;
     height: 20px;
@@ -110,6 +116,7 @@
   overflow: hidden;
   position: sticky;
   width: 40px;
+  -webkit-animation: crece 3s infinite;
   
   .task-new-btn {
     @include center-grid;

@@ -1,9 +1,23 @@
-<div class="general-filter" >
-    <ul id="filter-list" >
-      <li class="<%= 'filt-selected' if @filt_selected == '1' %>" ><%= link_to '<i class="fa-solid fa-hourglass-start"></i>'.html_safe, filter_path(filter: 'date', tasks_id: @tasks.ids.to_a, filt_selected: 1) %></li>
-      <li class="<%= 'filt-selected' if @filt_selected == '2' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_low', tasks_id: @tasks.ids.to_a, filt_selected: 2) %></li>
-      <li class="<%= 'filt-selected' if @filt_selected == '3' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_medium', tasks_id: @tasks.ids.to_a, filt_selected: 3) %></li> 
-      <li class="<%= 'filt-selected' if @filt_selected == '4' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_high', tasks_id: @tasks.ids.to_a, filt_selected: 4) %></li>
-      <li><%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, tasks_path %></li> 
-    </ul>
-  </div>
+<div class="general-filter link-container" >
+  <i class="fa-solid fa-filter" id="filter-icon"></i>
+  <ul id="filter-list" class="inactive">
+    <li class="<%= 'filt-selected' if @filt_selected == '1' %>" ><%= link_to '<i class="fa-solid fa-hourglass-start"></i>'.html_safe, filter_path(filter: 'date', tasks_id: @tasks.ids.to_a, filt_selected: 1) %></li>
+    <li class="<%= 'filt-selected' if @filt_selected == '2' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_low', tasks_id: @tasks.ids.to_a, filt_selected: 2) %></li>
+    <li class="<%= 'filt-selected' if @filt_selected == '3' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_medium', tasks_id: @tasks.ids.to_a, filt_selected: 3) %></li> 
+    <li class="<%= 'filt-selected' if @filt_selected == '4' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_high', tasks_id: @tasks.ids.to_a, filt_selected: 4) %></li>
+    <li><%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, tasks_path %></li> 
+  </ul>
+
+  <script>
+    function filterInteraction() {
+      const filterIcon = document.getElementById('filter-icon')
+      const filterList = document.getElementById('filter-list')
+
+      filterIcon.addEventListener('click', ()=> {
+        filterList.classList.contains('inactive') ? filterList.classList.remove('inactive') : filterList.classList.add('inactive')
+      })
+    }
+
+    filterInteraction()
+  </script>
+</div>

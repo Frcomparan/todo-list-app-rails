@@ -1,27 +1,59 @@
-.general-filter {
-  position: sticky;
-  top: 65px;
+@-webkit-keyframes tiembla {
+  0%  { -webkit-transform:rotateZ(0deg); }
+  10% { -webkit-transform: rotateZ(5deg); }
+  20%  { -webkit-transform:rotateZ(0deg); }
+  100%  { -webkit-transform:rotateZ(0deg); }
+}
+
+.task-index .general-filter {
+  align-items: center;
+  background: none;
+  bottom: 65px;
+  box-shadow: none;
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+  overflow: visible;
+  position: fixed;
+  width: auto;
+
+  &:hover { transform: none; }
+
+  .fa-filter { 
+    color: $primary-color;
+    font-size: 3.3rem; 
+  }
 
   ul {
+    align-items: center;
+    background: $low-grey;
+    border-radius: 10px;
     display: flex;
-    font-size: 1.7rem;
-    gap: 8px;
+    font-size: 2rem;
+    gap: 12px;
     justify-content: end;
+    margin: 0;
+    padding: 8px 12px;
 
     // Filtro de tiempo
-    li:first-child a { color: $secundary-color; }
-    li:first-child a:hover, .filt-selected:first-child a { color: $primary-color; }
+    li:first-child a { color: $primary-color; }
+    li:first-child a:hover, .filt-selected:first-child a { color: $secundary-color; }
 
     // Filtro de prioridad baja
-    li:nth-child(2) a { color: $low-priority; }
-    li:nth-child(2) a:hover, .filt-selected:nth-child(2) a { color: $low-priority-strong; }
+    li:nth-child(2) a { color: $low-priority-strong; }
+    li:nth-child(2) a:hover, .filt-selected:nth-child(2) a { color: $low-priority; }
 
     // Filtro de prioridad media
-    li:nth-child(3) a { color: $medium-priority; }
-    li:nth-child(3) a:hover, .filt-selected:nth-child(3) a { color: $medium-priority-strong; }
+    li:nth-child(3) a { color: $medium-priority-strong }
+    li:nth-child(3) a:hover, .filt-selected:nth-child(3) a { color: $medium-priority; }
 
     // Filtro de prioridad alta
-    li:nth-child(4) a { color: $high-priority; }
-    li:nth-child(4) a:hover, .filt-selected:nth-child(4) a { color: $high-priority-strong; }
+    li:nth-child(4) a { color: $high-priority-strong; }
+    li:nth-child(4) a:hover, .filt-selected:nth-child(4) a { color: $high-priority; }
   }
 }
+@media only screen and (min-width: 1000px) {
+  .task-index .general-filter { bottom: 20px; }
+}
+
+.inactive { display: none !important; }
