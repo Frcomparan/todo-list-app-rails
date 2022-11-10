@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get 'users_options' => 'pages#users_options'
   get 'searcher' => 'pages#searcher'
+  get 'filter' => 'pages#filter'
 end

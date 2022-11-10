@@ -1,0 +1,9 @@
+<div class="general-filter" >
+    <ul id="filter-list" >
+      <li class="<%= 'filt_selected' if @filt_selected == '1' %>" ><%= link_to '<i class="fa-solid fa-hourglass-start"></i>'.html_safe, filter_path(filter: 'date', tasks_id: @tasks.ids.to_a, filt_selected: 1) %></li>
+      <li class="<%= 'filt_selected' if @filt_selected == '2' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_low', tasks_id: @tasks.ids.to_a, filt_selected: 2) %></li>
+      <li class="<%= 'filt_selected' if @filt_selected == '3' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_medium', tasks_id: @tasks.ids.to_a, filt_selected: 3) %></li> 
+      <li class="<%= 'filt_selected' if @filt_selected == '4' %>" ><%= link_to '<i class="fa-solid fa-circle-exclamation"></i>'.html_safe, filter_path(filter: 'priority_high', tasks_id: @tasks.ids.to_a, filt_selected: 4) %></li>
+      <li><%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe, tasks_path %></li> 
+    </ul>
+  </div>
