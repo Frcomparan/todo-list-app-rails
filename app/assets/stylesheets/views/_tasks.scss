@@ -1,6 +1,6 @@
 .task-index {
   font-size: 1.4rem;
-  margin: 0;
+  margin: 0 0 14px 0;
   position: sticky;
   width: 100%;
 
@@ -16,6 +16,8 @@
     justify-content: center;
     margin-bottom: 20px;
     position: relative;
+    position: sticky;
+    top: 10px;
     width: 100%;
     
     input {
@@ -47,6 +49,8 @@
   .tasks-container {
     display: grid;
     gap: 8px;
+    grid-template-rows: repeat(auto-fit, 50px);
+    min-height: 80vh;
 
     .task {
       background: $white;
@@ -223,12 +227,6 @@
 @media only screen and (min-width: 1000px) {
   .task-index {
     padding-top: 20px;
-
-    .task-searcher {
-      margin-bottom: 10px;
-      position: sticky;
-      top: 0;
-    }
   }
 
   .link-container {
