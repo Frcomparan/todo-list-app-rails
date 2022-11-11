@@ -2,16 +2,19 @@
  <%= render 'partials/searcher' %>
   <div class="tasks-container">
     <% @tasks.each do |task| %>
-        <%= link_to task, class: "task #{'overdue' if task.due_date < Date.today }" do %>
-          <div>
-            <div class="priority priority-<%= task.priority %>"></div>
-            <%= task.title %>
-          </div>
-          <div class="task-due-date">
-            <i class="fa-solid fa-calendar-days"></i>
-            <%= task.due_date.strftime('%d/%m') %>
-          </div>
-        <% end %>
+        <div class="task-container">
+          <%= link_to task, class: "task #{'overdue' if task.due_date < Date.today }" do %>
+            <div>
+              <div class="priority priority-<%= task.priority %>"></div>
+              <%= task.title %>
+            </div>
+            <div class="task-due-date">
+              <i class="fa-solid fa-calendar-days"></i>
+              <%= task.due_date.strftime('%d/%m') %>
+            </div>
+          <% end %>
+          <%= link_to 'X', task, class:'delete-task', method: :delete %>
+        </div>
     <% end %>
   </div>
   <div class="link-container">

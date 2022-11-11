@@ -1,15 +1,15 @@
 <div class="form-container">
   <%= form_with(model: task, class: 'task-form') do |form| %>
     <% if task.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-        <ul>
-          <% task.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
+      <div class="invalid-form alert alert-danger alert-dismissible fade show" role="alert" >
+      <strong><span>Ha ocurrido un error:</span></strong><br>
+      <aside>
+        <% task.errors.each do |error| %>
+          <span><%= error.message %></span><br>
+        <% end %>
+      </aside>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <% end %>
 
     <header>
@@ -18,7 +18,7 @@
       </div>
       <div class="field">
         <%= form.label :due_date, 'Fecha limite'%>
-        <%= form.date_field :due_date, min: Date.today, value: Date.today %>
+        <%= form.date_field :due_date %>
       </div>
     </header>
 

@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   validates :priority, presence: { message: 'Debe asignar una prioridad a la tarea' }
 
   # Validación personalizada para la fecha de termino
-  before_create :valid_due_date?
+  validate :valid_due_date?
 
   # Haciendo más entendibles/intuitivos los niveles
   enum priority: { low: 0, medium: 1, high: 2 }

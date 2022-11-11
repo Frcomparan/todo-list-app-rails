@@ -44,6 +44,7 @@
         color: $grey;
         display: flex;
         gap: 4px;
+        padding-right: 24px;
       }
     }
 
@@ -78,6 +79,7 @@
   position: sticky;
   top: 10px;
   width: 100%;
+  z-index: 10;
   
   input {
     background-color: $white;
@@ -106,18 +108,17 @@
 }
 
 .link-container {
+  -webkit-animation: crece 3s infinite;
   background: $primary-color;
   border-radius: 50%;
   bottom: 70px;
-  box-shadow: 0px 0px 10px 8px white;
   cursor: pointer;
   height: 40px;
   margin-left: 85%;
   overflow: hidden;
   position: sticky;
   width: 40px;
-  -webkit-animation: crece 3s infinite;
-  
+  z-index: 7;
   .task-new-btn {
     @include center-grid;
     background: $primary-color;
@@ -229,6 +230,22 @@
       padding: 4px;
     }
   }
+}
+
+.task-container { position: relative; }
+
+.delete-task {
+  @include center-grid;
+  background: $grey-opacity;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: 20px;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 1000px) {
