@@ -17,6 +17,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    @option = 'new-task'
     @task = current_user.tasks.new
   end
 

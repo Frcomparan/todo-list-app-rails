@@ -3,8 +3,8 @@ class Task < ApplicationRecord
 
   # Validando la presencia (aceptación de nulos) en la BD
   validates :title, presence: { message: 'El titulo debe estar presente' }
-  validates :description, presence: true, presence: { message: 'La descripción debe estar presente' }
-  validates :priority, presence: true, presence: { message: 'Debe asignar una prioridad a la tarea' }
+  validates :description, presence: { message: 'La descripción debe estar presente' }
+  validates :priority, presence: { message: 'Debe asignar una prioridad a la tarea' }
 
   # Validación personalizada para la fecha de termino
   before_create :valid_due_date?
@@ -13,7 +13,7 @@ class Task < ApplicationRecord
   enum priority: { low: 0, medium: 1, high: 2 }
 
   # Creando scopes o atajos para los filtros
-  scope :filter_by_date, -> { order :due_date }
+  scope :filter_by_date, -> { where due_date: Date.today }
   scope :filter_by_priority_low, -> { where priority: 0 }
   scope :filter_by_priority_medium, -> { where priority: 1 }
   scope :filter_by_priority_high, -> { where priority: 2 }

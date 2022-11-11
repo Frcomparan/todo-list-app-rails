@@ -53,7 +53,7 @@
   }
 }
 @media only screen and (min-width: 1000px) {
-  .task-index .general-filter { bottom: 20px; }
+  .task-index .general-filter { display: none; }
 }
 
 .inactive { display: none !important; }

@@ -10,7 +10,7 @@
     <%= link_to 'Tareas de hoy', tasks_path(today: Date.today) %>
   </section>
   <section>
-    <%= link_to 'Tareas importantes', tasks_path(priority: 2) %>
+    <%= link_to 'Tareas urgentes', tasks_path(priority: 2) %>
   </section>
   <section>
     <%= link_to 'Tareas atrasadas', tasks_path(overdue: Date.today) %>

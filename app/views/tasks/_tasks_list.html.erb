@@ -1,10 +1,5 @@
 <div class="task-index">
-  <%= form_tag(searcher_path, method: :get, class: 'task-searcher') do %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Buscar...', value: '' %>
-    <%= button_tag(type: 'submit', class: 'searcher-submit') do %>
-      <i class="fa-solid fa-magnifying-glass"></i>
-    <% end %>
-  <% end %>
+ <%= render 'partials/searcher' %>
   <div class="tasks-container">
     <% @tasks.each do |task| %>
         <%= link_to task, class: "task #{'overdue' if task.due_date < Date.today }" do %>

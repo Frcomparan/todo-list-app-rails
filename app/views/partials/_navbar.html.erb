@@ -1,5 +1,6 @@
 <nav>
   <ul>
+    <%= render 'partials/searcher' %>
     <li class="nav-options <%='active' if @option == 'task' %>">
       <%= link_to tasks_path do %>
         <i class="fa-solid fa-clipboard"></i>
@@ -16,6 +17,38 @@
       <%= link_to users_options_path do %>
         <i class="fa-solid fa-user"></i>
         <span>Perfil</span>
+      <% end %>
+    </li>
+
+    <span class="nav-divison">Tareas</span>
+    <li class="nav-options <%='active' if @option == 'new-task' %>" >
+      <%= link_to new_task_path do %>
+        <i class="fa-solid fa-plus"></i>
+        <span>Agregar tarea</span>
+      <% end %>
+    </li>
+    <li class="filter <%= 'active' if @filt_selected == '1' %>" >
+      <%= link_to filter_path(filter: 'date', filt_selected: 1) do %>
+        <i class="fa-solid fa-hourglass-start"></i>
+        <span>Tareas de hoy</span>
+      <% end %>
+    </li>
+    <li class="filter filter-low <%= 'filt-selected-low' if @filt_selected == '2' %>" >
+      <%= link_to filter_path(filter: 'priority_low', filt_selected: 2) do %>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Tareas básicas</span>
+      <% end %>
+    </li>
+    <li class="filter filter-medium <%= 'filt-selected-medium' if @filt_selected == '3' %>" >
+      <%= link_to filter_path(filter: 'priority_medium', filt_selected: 3) do %>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Tareas importantes</span>
+      <% end %>
+    </li> 
+    <li class="filter filter-high <%= 'filt-selected-high' if @filt_selected == '4' %>" >
+      <%= link_to filter_path(filter: 'priority_high', filt_selected: 4) do %>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Tareas urgentes</span>
       <% end %>
     </li>
   </ul>

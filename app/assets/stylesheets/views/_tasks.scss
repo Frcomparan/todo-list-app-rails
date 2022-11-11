@@ -16,43 +16,6 @@
     color: $black;
   }
 
-  .task-searcher {
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    margin-bottom: 8px;
-    position: relative;
-    position: sticky;
-    top: 10px;
-    width: 100%;
-    
-    input {
-      background-color: $white;
-      border-radius: 20px;
-      border: 1px solid $grey-opacity;
-      font-size: 1.6rem;
-      outline: 0;
-      padding: 8px 14px;
-      width: 100%;
-    }
-
-    input:focus { border: 2px solid $primary-color }
-    
-    button {
-      @include center-grid;
-      background-color: $primary-button;
-      border-radius: 50%;
-      border: none;
-      height: 30px;
-      position: absolute;
-      right: 10px;
-      width: 30px;
-
-      i { color: $white; }
-    }
-  }
-
   .tasks-container {
     display: grid;
     gap: 8px;
@@ -103,6 +66,43 @@
   .priority-low { background-color: $low-priority; }
   .priority-medium { background-color: $medium-priority; }
   .priority-high { background-color: $high-priority; }
+}
+
+.task-searcher {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  
+  input {
+    background-color: $white;
+    border-radius: 20px;
+    border: 1px solid $grey-opacity;
+    font-size: 1.6rem;
+    outline: 0;
+    padding: 8px 14px;
+    width: 100%;
+  }
+
+  input:focus { border: 2px solid $primary-color }
+  
+  button {
+    @include center-grid;
+    background-color: $primary-button;
+    border-radius: 50%;
+    border: none;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    width: 30px;
+
+    i { color: $white; }
+  }
 }
 
 .link-container {
@@ -234,16 +234,9 @@
 @media only screen and (min-width: 1000px) {
   .task-index {
     padding-top: 20px;
+
+    .task-searcher { display: none; }
   }
 
-  .link-container {
-    bottom: 20px;
-    height: 55px;
-    width: 55px;
-
-    .task-new-btn {
-      font-weight: 400;
-      font-size: 3rem;
-    }
-  }
+  .link-container { display: none; }
 }

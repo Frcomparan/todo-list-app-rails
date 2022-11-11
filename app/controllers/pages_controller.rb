@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_filter, only: %i[ filter ]
+  before_action :authenticate_user!, only: %i[ searcher filter ]
   
   def users_options
     @option = 'user'
@@ -15,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def filter
-    @tasks = current_user.tasks.where(id: params[:tasks_id]).search_filter(params[:filter])
+    @tasks = current_user.tasks.search_filter(params[:filter])
   end
 
   private

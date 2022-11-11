@@ -8,6 +8,10 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
+
+  .task-searcher { display: none; }
+
+  .nav-divison { display: none; }
   
   ul {
     display: grid;
@@ -38,6 +42,8 @@ nav {
       border-radius: 10px;
       color: $primary-color;
     }
+
+    .filter { display: none; }
   }
 }
 
@@ -51,12 +57,34 @@ nav {
     position: sticky;
     top: 0px;
 
+    .task-searcher { 
+      background: $white;
+      display: inline-block;
+      width: 80%; 
+
+      input {
+        border-bottom: 1px solid $low-grey;
+        border-radius: 0;
+        border: none;
+        width: 100%;
+      }
+
+      button { display: none; }
+    }
+
+    .nav-divison {
+      color: $grey;
+      display: inline-block;
+      padding-left: 4px;
+      padding-top: 20px;
+    }
+
     ul {
       align-items: baseline;
       background: $white;
       display: flex;
       flex-direction: column;
-      max-width: 250px;
+      max-width: 280px;
       padding-left: 4px;
       padding-top: 20px;
       width: 90%;
@@ -68,7 +96,30 @@ nav {
 
         i { width: 30px; }
         
-        span { font-size: 1.6rem; }
+        span { 
+          font-size: 1.6rem; 
+          text-align: left;
+        }
+      }
+
+      .filter { display: inline-block; }
+
+      .filter a { border-radius: 10px; }
+
+      .filter-low a:hover, .filt-selected-low a {
+        background: $low-priority;
+        color: $low-priority-strong;
+      }
+  
+      .filter-medium a:hover, .filt-selected-medium a {
+        background: $medium-priority;
+        color: $medium-priority-strong;
+        padding-right: 4px;
+      }
+  
+      .filter-high a:hover, .filt-selected-high a {
+        background: $high-priority;
+        color: $high-priority-strong;
       }
     }
   }
