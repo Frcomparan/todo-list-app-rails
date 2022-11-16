@@ -59,14 +59,26 @@ nav {
 
     .task-searcher { 
       background: $white;
-      display: inline-block;
+      display: flex;
+      gap: 4px;
+      padding: 4px;
       width: 80%; 
+
+      .search-icon {
+        color: $grey;
+        display: inline-block;
+      }
 
       input {
         border-bottom: 1px solid $low-grey;
         border-radius: 0;
         border: none;
         width: 100%;
+      }
+
+      input:focus {
+        border: none;
+        border-bottom: 2px solid $primary-color;
       }
 
       button { display: none; }

@@ -19,16 +19,6 @@
       font-size: 10rem;
     }
   }
-  
-  a {
-    background: $primary-color;
-    border-radius: 4px;
-    color: $white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none; 
-    width: 100%;
-  }
 }
 
 .home-container {
@@ -49,7 +39,6 @@
     
     a {
       @include center-grid;
-      color: $black;
       font-size: 2rem; 
       height: 100%;
       text-decoration: none;

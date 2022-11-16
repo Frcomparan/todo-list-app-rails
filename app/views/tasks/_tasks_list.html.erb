@@ -13,7 +13,7 @@
               <%= task.due_date.strftime('%d/%m') %>
             </div>
           <% end %>
-          <%= link_to 'X', task, class:'delete-task', method: :delete %>
+          <%= link_to 'X', task, class:'delete-task', data: { confirm: "Estas por eliminar esta tarea ¿Estas seguro?" }, method: :delete %>
         </div>
     <% end %>
   </div>

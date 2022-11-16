@@ -3,10 +3,10 @@
     <i class="fa-solid fa-user"></i>
   </div>
   <% if user_signed_in? %>
-    <%= link_to 'Actualizar datos', edit_user_registration_path %>
-    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Actualizar datos', edit_user_registration_path, class: 'primary-btn' %>
+    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'primary-btn' %>
   <% else %>
-    <%= link_to 'Iniciar sesión', new_user_session_path %>
-    <%= link_to 'Crear cuenta', new_user_registration_path %>
+    <%= link_to 'Iniciar sesión', new_user_session_path, class: 'primary-btn' %>
+    <%= link_to 'Crear cuenta', new_user_registration_path, class: 'primary-btn' %>
   <% end %>
 </div>
