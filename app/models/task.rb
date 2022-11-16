@@ -5,6 +5,7 @@ class Task < ApplicationRecord
   validates :title, presence: { message: 'El titulo debe estar presente' }
   validates :description, presence: { message: 'La descripción debe estar presente' }
   validates :priority, presence: { message: 'Debe asignar una prioridad a la tarea' }
+  validates :due_date, presence: { message: 'Debe ingresar una fecha de termino' }
 
   # Validación personalizada para la fecha de termino
   validate :valid_due_date?
@@ -28,8 +29,10 @@ class Task < ApplicationRecord
 
   # Función para validar que la fecha de termino no este en el pasado
   def valid_due_date?
-    unless due_date > Date.today
-      errors.add(:due_date, "La fecha no puede estar en le pasado")
+    if due_date
+      unless due_date > Date.today
+        errors.add(:due_date, "La fecha no puede estar en le pasado")
+      end
     end
   end
 end

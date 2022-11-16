@@ -28,11 +28,18 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# Gema encargada de todo los aspectos relacionados con la
+#   autenticación de usarios
 gem 'devise'
 
+# Gema utilizada para habilitar el uso de variables de entornos
+#   mediante el archivo <.env>
 gem 'dotenv-rails'
 
 gem 'rails-i18n', '~> 6.0'
+
+# Gema utilizada para la creación de datos falsos para las tareas
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

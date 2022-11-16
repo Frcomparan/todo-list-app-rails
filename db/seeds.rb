@@ -22,12 +22,12 @@ users.each { |user| User.create!(email: user[:email], password: user[:password])
 # Creamos un template de tarea para asignar a los diferentes usuarios de la aplicación
 def generateTask
   task = {
-    title: 'Titulo de prueba', 
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus odit ullam quasi illum? Voluptatibus totam cumque earum saepe necessitatibus fuga! Corrupti earum repellendus vel provident quisquam ipsa officiis, ipsam illum.',
-    due_date: Date.today + Random.rand(1..15), # Finaliza hoy más los dias que se agregen -x.days-
+    title: Faker::Movies::HarryPotter.spell, 
+    description: Faker::Movies::HarryPotter.quote,
+    due_date: (Date.today - 5.days) + Random.rand(1..15), # Finaliza hoy más los dias que se agregen -x.days-
     priority: Random.rand(0..2), # Genera un numero aleatoria entre 0 y 2
     owner_id: Random.rand(1..5) # Genera un numero aleatoria entre 1 y 5 (El total de usuarios por defecto)
   }
 end
 
-50.times { Task.create!(generateTask) }
+200.times { Task.create!(generateTask) }
